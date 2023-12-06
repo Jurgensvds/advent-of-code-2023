@@ -1,6 +1,3 @@
-Day 3 - Advent
-
-
 import { readTextFile } from "../file-reader";
 import { Coordinate, NumberCoordinate } from "./models/day-three-models";
 
