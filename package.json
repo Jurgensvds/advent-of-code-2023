@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "start": "node dist/index.js",
-    "build-run": "tsc && node dist/index.js"
+    "start": "node --stack-size=200000 dist/index.js",
+    "build-run": "tsc && node --stack-size=200000 dist/index.js"
   },
   "keywords": [],
   "author": "",
@@ -14,5 +14,9 @@
   "devDependencies": {
     "ts-node": "^10.9.1",
     "typescript": "^5.3.2"
+  },
+  "dependencies": {
+    "@types/lodash": "^4.14.202",
+    "lodash": "^4.17.21"
   }
 }
