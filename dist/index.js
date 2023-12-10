@@ -1,13 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Day_6_1 = require("./Day-6");
+const Day_7_1 = require("./Day-7");
 // dayOneMain();
 // dayTwoMain();
 // dayThreeMain();
 // dayFourMain();
 // dayFiveMain();
-(0, Day_6_1.main)();
-// daySevenMain();
+// daySixMain();
+(0, Day_7_1.main)();
 // dayEightMain();
 // dayNineMain();
 // dayTenMain();
