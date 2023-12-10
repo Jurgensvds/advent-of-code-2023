@@ -33,11 +33,10 @@ function partOne(mappedData) {
     const coordinates = mapToCoordinateArray(mappedData);
     for (let coord of coordinates) {
         if (numberHasAdjacentSymbols(mappedData, coord)) {
-            console.log(coord);
             total += getNumberFromList(mappedData, coord);
         }
     }
-    console.log(total);
+    console.log('Part one:', total);
 }
 function findNumberEndIndex(row, numberStartCoordinate) {
     for (let i = numberStartCoordinate.column; i < row.length; i++) {
@@ -82,6 +81,31 @@ function getNumberFromList(mappedData, coordinate) {
 // ---------------------------------------------------
 // Part Two - START
 function partTwo(mappedData) {
-    // Start Here
+    const coordinates = mapToCoordinateArray(mappedData);
+    let gearMap = mappedData.map(row => row.map(() => []));
+    ;
+    for (let coord of coordinates) {
+        addNumberToGearMap(mappedData, coord, gearMap);
+    }
+    gearMap = gearMap.map(row => row.filter((cell) => cell.length === 2)).filter((row) => row.length);
+    const total = gearMap.reduce((a, b) => a + b.reduce((x, y) => x + (y[0] * y[1]), 0), 0);
+    console.log("Part two:", total);
+}
+function addNumberToGearMap(mappedData, coordinates, gearMap) {
+    const startColumn = coordinates.start.column === 0 ? 0 : coordinates.start.column - 1;
+    const endColumn = coordinates.end.column === mappedData.length - 1 ? coordinates.end.column : coordinates.end.column + 1;
+    const startRow = coordinates.start.row === 0 ? 0 : coordinates.start.row - 1;
+    const endRow = coordinates.end.row === mappedData.length - 1 ? coordinates.end.row : coordinates.end.row + 1;
+    for (let i = startRow; i <= endRow; i++) {
+        for (let j = startColumn; j <= endColumn; j++) {
+            if (i === coordinates.start.row && (j >= coordinates.start.column && j <= coordinates.end.column)) {
+                continue;
+            }
+            if (mappedData[i][j] === '*') {
+                // gearMap[i][j].push(coordinates)
+                gearMap[i][j].push(getNumberFromList(mappedData, coordinates));
+            }
+        }
+    }
 }
 // Part Two - END

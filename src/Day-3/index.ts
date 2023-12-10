@@ -112,8 +112,6 @@ function partTwo(mappedData: string[][]): void {
 }
 
 function addNumberToGearMap(mappedData: string[][], coordinates: NumberCoordinate, gearMap: number[][][]): void {
-    let hasAdjacentSymbols = false;
-
     const startColumn = coordinates.start.column === 0 ? 0 : coordinates.start.column - 1;
     const endColumn = coordinates.end.column === mappedData.length - 1 ? coordinates.end.column : coordinates.end.column + 1;
     const startRow = coordinates.start.row === 0 ? 0 : coordinates.start.row - 1;

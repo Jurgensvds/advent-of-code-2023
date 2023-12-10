@@ -27,10 +27,10 @@ import { main as dayTwentyFiveMain } from "./Day-25";
 
 // dayOneMain();
 // dayTwoMain();
-dayThreeMain();
+// dayThreeMain();
 // dayFourMain();
 // dayFiveMain();
-// daySixMain();
+daySixMain();
 // daySevenMain();
 // dayEightMain();
 // dayNineMain();
