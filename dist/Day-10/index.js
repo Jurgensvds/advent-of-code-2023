@@ -49,9 +49,10 @@ function partTwo(mapLayout) {
             }
         }
     }
-    for (let i = 0; i < mapLayout.length; i++) {
-        console.log(mapLayout[i].join(''));
-    }
+    // Print map
+    // for(let i = 0; i < mapLayout.length; i++) {
+    //     console.log(mapLayout[i].join(''))
+    // }
     console.log('Part two:', totalTileInsideLoop);
 }
 // Part 2 - END
